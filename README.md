@@ -1,21 +1,30 @@
-// Creating an instance of MiniORM
-$orm = new MiniORM('localhost', 'username', 'password', 'database', 'tablename');
+# This is a mini ORM for PHP
+### Autor: Crimson Tiangco
 
-// Inserting a new record
+### -
+### Inserting a new record
+```
 $data = ['name' => 'John', 'age' => 25, 'email' => 'john@example.com'];
 $insertedId = $orm->insert($data);
+```
 
-// Selecting records
+### Selecting records
+```
 $conditions = ['age' => 25];
 $columns = 'name, email';
 $results = $orm->select($conditions, $columns);
+```
 
-// Updating records
+### Updating records
+```
 $conditions = ['id' => $insertedId];
 $data = ['age' => 30];
 $updatedRows = $orm->update($conditions, $data);
+```
 
-// Deleting records
+### Deleting records
+```
 $conditions = ['id' => $insertedId];
 $deletedRows = $orm->delete($conditions);
+```
 
